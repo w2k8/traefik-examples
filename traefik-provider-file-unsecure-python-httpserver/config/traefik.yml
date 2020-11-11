@@ -1,0 +1,18 @@
+api:
+  insecure: true 
+  dashboard: true
+  debug: true
+
+log:
+  level: DEBUG
+
+providers:
+  file:
+    filename: /traefik/provider.yml
+    # directory: /traefik
+    watch: true
+
+entryPoints:
+  http:
+    address: ':80'
+  

@@ -1,0 +1,29 @@
+http:
+  routers:
+    python1:
+      rule: "Host(`test1.localhost`)"
+      service: test1
+      entryPoints: http
+    python2:
+      rule: "Host(`test2.localhost`)"
+      service: test2
+      entryPoints: http
+    python3:
+      rule: "Host(`test3.localhost`)"
+      service: test3
+      entryPoints: http
+    
+  services:
+    test1:
+      loadBalancer:
+        servers:
+        - url: http://python-test1:8000
+    test2:
+      loadBalancer:
+        servers:
+        - url: http://python-test2:7000
+    test3:
+      loadBalancer:
+        servers:
+        - url: http://python-test3:8001
+    
